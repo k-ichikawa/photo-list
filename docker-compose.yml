@@ -8,3 +8,9 @@ services:
     volumes:
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
       - ./src:/usr/share/nginx/html
+  app:
+    container_name: photo-list-app
+    build: ./docker/php
+    volumes:
+      - ./docker/php/php.ini:/usr/local/php/php.ini
+      - ./src:/var/www/html
