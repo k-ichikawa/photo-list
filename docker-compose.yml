@@ -12,7 +12,7 @@ services:
     container_name: photo-list-app
     build: ./docker/php
     volumes:
-      - ./docker/php/php.ini:/usr/local/php/php.ini
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
       - ./src:/var/www/html
   db:
     container_name: photo-list-db
