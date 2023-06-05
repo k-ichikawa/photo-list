@@ -10,6 +10,8 @@ services:
       - ./src:/usr/share/nginx/html
   app:
     container_name: photo-list-app
+    ports:
+      - 5173:5173
     build: ./docker/php
     volumes:
       - ./docker/php/php.ini:/usr/local/etc/php/php.ini
