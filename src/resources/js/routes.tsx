@@ -1,10 +1,10 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './routes/Home';
-import CollectList from './routes/CollectList';
-import WantList from './routes/WantList';
-import NoMatch from './routes/NoMatch';
-import Header from './components/Header';
+import Home from '@/js/routes/Home';
+import CollectList from '@/js/routes/CollectList';
+import WantList from '@/js/routes/WantList';
+import NoMatch from '@/js/routes/NoMatch';
+import Header from '@/js/components/Header';
 
 export function App() {
     return (

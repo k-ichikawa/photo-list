@@ -1,0 +1,9 @@
+{
+    "javascript.suggest.paths": false,
+    "typescript.suggest.paths": false,
+    "path-autocomplete.enableFolderTrailingSlashboolean": true,
+    "path-intellisense.absolutePathToWorkspace": false,
+    "path-autocomplete.pathMappings": {
+      "@": "${folder}/resources"
+    }
+  }
