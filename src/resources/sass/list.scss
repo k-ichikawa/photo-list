@@ -1,0 +1,50 @@
+section {
+    margin-left: 64px;
+}
+
+section > h1 {
+    font-size: 24px;
+}
+
+section > .photoItemList {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section > .photoItemList > .photoItem {
+    width: 40%;
+    height: 100px;
+    text-decoration: none;
+    background-color: #F1F1F1;
+    border-radius: 20px;
+}
+
+section > .photoItemList > .photoItem:nth-child(2n) {
+    margin-left: 8px;
+}
+
+section > .photoItemList > .photoItem:nth-child(n+3) {
+    margin-top: 8px;
+}
+
+section > .photoItemList > .photoItem > .photoItemContent {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 8px;
+}
+
+section > .photoItemList > .photoItem > .photoItemContent > img {
+    height: 80%;
+    margin-right: 8px;
+}
+
+section > .photoItemList > .photoItem > .photoItemContent > span {
+    font-size: 16px;
+    height: 80px;
+    margin-right: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
