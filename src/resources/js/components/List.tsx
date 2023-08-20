@@ -1,34 +1,13 @@
 import React from 'react';
+import { PhotoItem } from '@/js/components/PhotoItem';
+import { PhotoListItem } from '@/js/types/photoList';
 
-export function List(props: { h1Text: React.ReactNode; }): React.ReactElement {
+export function List(props: { h1Text: string; photos: PhotoListItem[] }): React.ReactElement {
   return (
     <section>
       <h1>{props.h1Text}</h1>
       <div className='photoItemList'>
-        <a href='#' className='photoItem'>
-          <div className='photoItemContent'>
-            <img src='/image/sample.jpg'></img>
-            <span>「One choice」MV衣装</span>
-          </div>
-        </a>
-        <a href='#' className='photoItem'>
-          <div className='photoItemContent'>
-            <img src='/image/sample.jpg'></img>
-            <span>「シーラカンス」MV衣装</span>
-          </div>
-        </a>
-        <a href='#' className='photoItem'>
-          <div className='photoItemContent'>
-            <img src='/image/sample.jpg'></img>
-            <span>「One choice」MV衣装2</span>
-          </div>
-        </a>
-        <a href='#' className='photoItem'>
-          <div className='photoItemContent'>
-            <img src='/image/sample.jpg'></img>
-            <span>「シーラカンス」MV衣装2</span>
-          </div>
-        </a>
+        {props.photos.map(photo => <PhotoItem thumbnail={photo.thumbnail} title={photo.title} />)}
       </div>
     </section>
   );
