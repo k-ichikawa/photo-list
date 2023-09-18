@@ -6,23 +6,20 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('collect_list', function (Blueprint $table) {
             $table->increments('id')->autoIncrement();
+            $table->integer('user_id')->unsigned();
             $table->integer('photo_id')->unsigned();
-            $table->timestamps();
-
+            $table->datetime('created_at');
+            $table->datetime('updated_at');
+            
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('photo_id')->references('id')->on('photo');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('collect_list');

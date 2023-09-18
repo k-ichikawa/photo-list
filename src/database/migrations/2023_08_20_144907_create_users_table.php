@@ -8,10 +8,9 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('photo_series', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->autoIncrement();
-            $table->string('name', 100);
-            $table->text('image_url')->nullable();
+            $table->string('nickname', 100);
             $table->datetime('created_at');
             $table->datetime('updated_at');
         });
@@ -19,6 +18,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('photo_series');
+        Schema::dropIfExists('users');
     }
 };

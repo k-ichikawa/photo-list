@@ -8,17 +8,20 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('photo_series', function (Blueprint $table) {
+        Schema::create('want_list', function (Blueprint $table) {
             $table->increments('id')->autoIncrement();
-            $table->string('name', 100);
-            $table->text('image_url')->nullable();
+            $table->integer('user_id')->unsigned();
+            $table->integer('photo_id')->unsigned();
             $table->datetime('created_at');
             $table->datetime('updated_at');
+            
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('photo_id')->references('id')->on('photo');
         });
     }
 
     public function down(): void
     {
-        Schema::dropIfExists('photo_series');
+        Schema::dropIfExists('want_list');
     }
 };
