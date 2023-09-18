@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Database\Seeders;
 
@@ -8,6 +9,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        (new MemberSeeder())->run();
+        $this->call(MemberSeeder::class);
+        $this->call(PhotoSeeder::class);
     }
 }

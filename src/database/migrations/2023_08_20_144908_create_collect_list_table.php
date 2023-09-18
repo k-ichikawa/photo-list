@@ -15,7 +15,7 @@ return new class extends Migration
             $table->datetime('created_at');
             $table->datetime('updated_at');
             
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('user');
             $table->foreign('photo_id')->references('id')->on('photo');
         });
     }
