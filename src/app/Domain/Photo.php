@@ -11,9 +11,9 @@ class Photo
 
     public function __construct(
         readonly int $photoId,
-        readonly int $hasPhotoFromDb,
-        readonly ?string $imageUrlFromDb,
-        readonly string $poseFromDb,
+        private readonly int $hasPhotoFromDb,
+        private readonly ?string $imageUrlFromDb,
+        private readonly string $poseFromDb,
         readonly FullName $memberName
     ) {
         $this->hasPhoto = (bool)$hasPhotoFromDb;
