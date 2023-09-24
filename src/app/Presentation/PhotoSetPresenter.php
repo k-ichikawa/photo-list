@@ -11,10 +11,10 @@ class PhotoSetPresenter
     {
         $viewModel = new PhotoSetViewModel();
 
-        $viewModel->collectListId = $photoSet->getCollectListId();
-        $viewModel->photoSeriesName = $photoSet->getPhotoSeriesName();
-        $viewModel->photoSeriesImageUrl = $photoSet->getPhotoSeriesImageUrl();
-        $viewModel->memberName = $photoSet->getMember()->getValue();
+        $viewModel->collectListId = $photoSet->collectListId;
+        $viewModel->photoSeriesName = $photoSet->photoSeriesName;
+        $viewModel->photoSeriesImageUrl = $photoSet->photoSeriesImageUrl;
+        $viewModel->memberName = $photoSet->member->value;
 
         return $viewModel;
     }

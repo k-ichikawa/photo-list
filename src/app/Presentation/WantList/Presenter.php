@@ -13,7 +13,7 @@ class Presenter
         $viewModel = new ViewModel();
 
         $photoSetList = [];
-        foreach($useCaseOutput->getWantPhotoSetList() as $photoSet) {
+        foreach($useCaseOutput->wantPhotoSetList as $photoSet) {
             $photoSetList[] = PhotoSetPresenter::create($photoSet);
         }
 

@@ -7,22 +7,8 @@ use App\Domain\PhotoSet;
 
 class UseCaseOutput
 {
-    /** @var PhotoSet[] $photoSet */
-    private array $collectPhotoSetList;
-
     /**
      * @param PhotoSet[] $collectPhotoSetList
      */
-    public function __construct(array $collectPhotoSetList)
-    {
-        $this->collectPhotoSetList = $collectPhotoSetList;
-    }
-
-    /**
-     * @return PhotoSet[]
-     */
-    public function getCollectPhotoSetList(): array
-    {
-        return $this->collectPhotoSetList;
-    }
+    public function __construct(readonly array $collectPhotoSetList){}
 }
