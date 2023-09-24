@@ -1,24 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { List } from '@/js/components/List';
+import { PhotoSetList } from '@/js/components/PhotoSetList';
 
 const WantList = () => {
-    const [photos, setPhotos] = useState([]);
+    const [photoSetList, setPhotoSetList] = useState([]);
 
     useEffect(() => {
         const getResponse = async () => {
             const response = await axios.get('api/want-list');
 
-            setPhotos(response.data);
+            setPhotoSetList(response.data.photoSetList);
         }
         getResponse();
     }, []);
 
     return (
         <>
-            <List
+            <PhotoSetList
                 h1Text={'want list'}
-                photos={photos}
+                photoSetList={photoSetList}
             />
         </>
     );

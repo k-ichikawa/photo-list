@@ -2,18 +2,22 @@ section {
     margin-left: 64px;
 }
 
+section a {
+    color: #333;
+}
+
 section > h1 {
     font-size: 24px;
 }
 
-section > .photoItemList {
+section > .photoSetList {
     width: 75%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-section > .photoItemList > .photoItem {
+section > .photoSetList > .photoSet {
     width: 40%;
     height: 100px;
     text-decoration: none;
@@ -21,30 +25,41 @@ section > .photoItemList > .photoItem {
     border-radius: 20px;
 }
 
-section > .photoItemList > .photoItem:nth-child(2n) {
+section > .photoSetList > .photoSet:hover {
+    text-decoration: underline;
+}
+
+section > .photoSetList > .photoSet:nth-child(2n) {
     margin-left: 8px;
 }
 
-section > .photoItemList > .photoItem:nth-child(n+3) {
+section > .photoSetList > .photoSet:nth-child(n+3) {
     margin-top: 8px;
 }
 
-section > .photoItemList > .photoItem > .photoItemContent {
+section > .photoSetList > .photoSet > .photoSetContent {
     display: flex;
     height: 100%;
     align-items: center;
     margin-left: 16px;
+    margin-right: 16px;
 }
 
-section > .photoItemList > .photoItem > .photoItemContent > img {
+section > .photoSetList > .photoSet > .photoSetContent > img {
     height: 80%;
     margin-right: 8px;
 }
 
-section > .photoItemList > .photoItem > .photoItemContent > span {
-    font-size: 16px;
+section > .photoSetList > .photoSet > .photoSetContent > div {
     height: 80px;
-    margin-right: 8px;
+    margin: 0 auto;
+}
+
+section > .photoSetList > .photoSet > .photoSetContent > div > span {
+    font-size: 16px;
+    font-weight: bold;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    text-align: center;
 }

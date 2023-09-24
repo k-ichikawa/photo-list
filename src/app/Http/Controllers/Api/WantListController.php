@@ -2,31 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Application\UseCases\WantList\UseCaseInput;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Presentation\WantList\Presenter;
 use Illuminate\Http\JsonResponse;
 
 class WantListController extends Controller
 {
+    public function __construct(protected UseCaseInput $inputPort) {}
+
     public function index(): JsonResponse
     {
-        return response()->json([
-            [
-                'thumbnail' => '/image/sample.jpg',
-                'title' => '「One choice」MV衣装'
-            ],
-            [
-                'thumbnail' => '/image/sample.jpg',
-                'title' => '「シーラカンス」MV衣装'
-            ],
-            [
-                'thumbnail' => '/image/sample.jpg',
-                'title' => '「ってか」MV衣装'
-            ],
-            [
-                'thumbnail' => '/image/sample.jpg',
-                'title' => '「僕なんか」MV衣装'
-            ],
-        ]);
+        $useCaseOutput = $this->inputPort->handle(1);
+        $viewModel = Presenter::create($useCaseOutput);
+
+        return response()->json($viewModel);
     }
 }
