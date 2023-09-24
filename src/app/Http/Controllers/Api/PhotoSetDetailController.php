@@ -14,8 +14,7 @@ class PhotoSetDetailController extends Controller
 
     public function index(Request $request): JsonResponse
     {
-        // $useCaseOutput = $this->inputPort->handle($request->input('collectListId'));
-        $useCaseOutput = $this->inputPort->handle(1);
+        $useCaseOutput = $this->inputPort->handle($request->input('collectListId'));
         $viewModel = Presenter::create($useCaseOutput);
 
         return response()->json($viewModel);
