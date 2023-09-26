@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace App\Application\UseCases\PhotoSetDetail;
 
-use App\Domain\Photo;
+use App\Domain\PhotoSetDetail;
 
 class UseCaseOutput
 {
     /**
-     * @param Photo[] $photos
+     * @param PhotoSetDetail $photoSetDetail
      */
-    public function __construct(readonly array $photos){}
+    public function __construct(readonly PhotoSetDetail $photoSetDetail){}
 }

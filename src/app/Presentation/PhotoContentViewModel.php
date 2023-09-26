@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace App\Presentation;
 
-class PhotoViewModel
+class PhotoContentViewModel
 {
     public int $photoId;
     public bool $hasPhoto;

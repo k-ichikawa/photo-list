@@ -3,15 +3,16 @@ declare(strict_types=1);
 
 namespace App\Gateways;
 
-use App\Application\Repositories\PhotoSetDetail;
+use App\Application\Repositories\PhotoSetDetailInterface;
 use App\Application\Repositories\PhotoSetDetailResultDto;
 use App\Domain\FullName;
-use App\Domain\Photo;
+use App\Domain\PhotoContent;
+use App\Domain\PhotoSetDetail;
 use App\Models\CollectList;
 use App\Models\Photo as PhotoModel;
 use Illuminate\Support\Facades\DB;
 
-class PhotoSetDetailImpl implements PhotoSetDetail
+class PhotoSetDetailImpl implements PhotoSetDetailInterface
 {
     public function get(int $collectListId): PhotoSetDetailResultDto
     {
@@ -39,9 +40,9 @@ class PhotoSetDetailImpl implements PhotoSetDetail
             ->leftJoin('collect_list', 'photo.id', '=', 'collect_list.photo_id')
             ->get();
 
-        $photos = [];
+        $photoContent = [];
         foreach($results as $result) {
-            $photos[] = new Photo(
+            $photoContent[] = new PhotoContent(
                 $result->photo_id,
                 $result->has_photo,
                 $result->image_url,
@@ -52,7 +53,12 @@ class PhotoSetDetailImpl implements PhotoSetDetail
                 )
             );
         }
+        
+        $photoSetDetail = new PhotoSetDetail(
+            new FullName($results[0]->first_name, $results[0]->last_name),
+            $photoContent
+        );
 
-        return new PhotoSetDetailResultDto($photos);
+        return new PhotoSetDetailResultDto($photoSetDetail);
     }
 }

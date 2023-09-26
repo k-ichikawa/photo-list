@@ -3,10 +3,12 @@ declare(strict_types=1);
 
 namespace App\Presentation\PhotoSetDetail;
 
-use App\Presentation\PhotoViewModel;
+use App\Presentation\PhotoContentViewModel;
 
 class ViewModel
 {
-    /** @var PhotoViewModel[] $photos */
-    public array $photos;
+    public string $memberName;
+
+    /** @var PhotoContentViewModel[] $photoSetDetail */
+    public array $photoContents;
 }

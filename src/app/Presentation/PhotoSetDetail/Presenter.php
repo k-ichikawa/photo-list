@@ -4,20 +4,21 @@ declare(strict_types=1);
 namespace App\Presentation\PhotoSetDetail;
 
 use App\Application\UseCases\PhotoSetDetail\UseCaseOutput;
-use App\Presentation\PhotoPresenter;
+use App\Presentation\PhotoContentPresenter;
 
 class Presenter
 {
     static function create(UseCaseOutput $useCaseOutput): ViewModel
     {
         $viewModel = new ViewModel();
+        $viewModel->memberName = $useCaseOutput->photoSetDetail->member->value;
 
-        $photos = [];
-        foreach($useCaseOutput->photos as $photo) {
-            $photos[] = PhotoPresenter::create($photo);
+        $photoContents = [];
+        foreach($useCaseOutput->photoSetDetail->photoContent as $photoContent) {
+            $photoContents[] = PhotoContentPresenter::create($photoContent);
         }
 
-        $viewModel->photos = $photos;
+        $viewModel->photoContents = $photoContents;
 
         return $viewModel;
     }

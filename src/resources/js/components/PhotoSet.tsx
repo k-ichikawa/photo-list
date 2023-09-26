@@ -1,5 +1,5 @@
 import React from 'react';
-import { PhotoSetType } from '../types/photoList';
+import { PhotoSetType } from '@/js/types/photoList';
 
 export function PhotoSet(props: { photoSet: PhotoSetType }): React.ReactElement {
   return (

@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace App\Gateways;
 
-use App\Application\Repositories\CollectPhotoSet;
+use App\Application\Repositories\CollectPhotoSetInterface;
 use App\Application\Repositories\CollectPhotoSetResultDto;
 use App\Domain\FullName;
 use App\Domain\PhotoSet;
 use App\Models\CollectList;
 use Illuminate\Support\Facades\DB;
 
-class CollectPhotoSetImpl implements CollectPhotoSet
+class CollectPhotoSetImpl implements CollectPhotoSetInterface
 {
     public function get(int $userId): CollectPhotoSetResultDto
     {

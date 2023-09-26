@@ -7,6 +7,6 @@ use App\Presentation\PhotoSetViewModel;
 
 class ViewModel
 {
-    /** @var PhotoSetViewModel[] $photo */
+    /** @var PhotoSetViewModel[] $photoSetList */
     public array $photoSetList;
 }

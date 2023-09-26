@@ -5,7 +5,7 @@ namespace App\Application\Repositories;
 
 use App\Domain\PhotoSet;
 
-interface WantPhotoSet
+interface WantPhotoSetInterface
 {
     public function get(int $userId): WantPhotoSetResultDto;
 }

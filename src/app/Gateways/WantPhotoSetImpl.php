@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace App\Gateways;
 
-use App\Application\Repositories\WantPhotoSet;
+use App\Application\Repositories\WantPhotoSetInterface;
 use App\Application\Repositories\WantPhotoSetResultDto;
 use App\Domain\FullName;
 use App\Domain\PhotoSet;
 use App\Models\WantList;
 use Illuminate\Support\Facades\DB;
 
-class WantPhotoSetImpl implements WantPhotoSet
+class WantPhotoSetImpl implements WantPhotoSetInterface
 {
     public function get(int $userId): WantPhotoSetResultDto
     {

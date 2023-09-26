@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Application\Repositories;
 
-use App\Domain\Photo;
+use App\Domain\PhotoSetDetail;
 
-interface PhotoSetDetail
+interface PhotoSetDetailInterface
 {
     public function get(int $collectListId): PhotoSetDetailResultDto;
 }
@@ -13,7 +13,7 @@ interface PhotoSetDetail
 class PhotoSetDetailResultDto
 {
     /**
-     * @param Photo[] $photos
+     * @param PhotoSetDetail $photoSetDetail
      */
-    public function __construct(readonly array $photos) {}
+    public function __construct(readonly PhotoSetDetail $photoSetDetail) {}
 }
