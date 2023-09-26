@@ -22,6 +22,7 @@ const Drawer = () => {
     <>
         <div id="drawer-content">
             { photoSetDetail?.memberName }
+            { photoSetDetail?.photoSeriesName }
             {
               photoSetDetail ? photoSetDetail.photoContents.map((photoContent: PhotoContent) => 
                 <Photo photoContent={photoContent} key={photoContent.photoId}></Photo>

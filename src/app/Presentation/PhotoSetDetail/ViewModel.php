@@ -9,6 +9,8 @@ class ViewModel
 {
     public string $memberName;
 
+    public string $photoSeriesName;
+
     /** @var PhotoContentViewModel[] $photoSetDetail */
     public array $photoContents;
 }

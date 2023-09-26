@@ -30,13 +30,15 @@ class PhotoSetDetailImpl implements PhotoSetDetailInterface
             'photo.image_url',
             'photo.pose',
             'member.first_name',
-            'member.last_name'
+            'member.last_name',
+            'photo_series.name as photo_series_name'
         ])
             ->joinSub($subQuery, 'sub_query', function($join) {
                 $join->on('photo.photo_series_id', '=', 'sub_query.photo_series_id')
                     ->on('photo.member_id', '=', 'sub_query.member_id');
             })
             ->join('member', 'sub_query.member_id', '=', 'member.id')
+            ->join('photo_series', 'sub_query.photo_series_id', 'photo_series.id')
             ->leftJoin('collect_list', 'photo.id', '=', 'collect_list.photo_id')
             ->get();
 
@@ -46,16 +48,13 @@ class PhotoSetDetailImpl implements PhotoSetDetailInterface
                 $result->photo_id,
                 $result->has_photo,
                 $result->image_url,
-                $result->pose,
-                new FullName(
-                    $result->first_name,
-                    $result->last_name
-                )
+                $result->pose
             );
         }
         
         $photoSetDetail = new PhotoSetDetail(
             new FullName($results[0]->first_name, $results[0]->last_name),
+            $result->photo_series_name,
             $photoContent
         );
 

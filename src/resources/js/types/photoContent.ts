@@ -10,5 +10,6 @@ export class PhotoContent {
 
 export type PhotoSetDetail = {
     memberName: string;
+    photoSeriesName: string;
     photoContents: PhotoContent[];
 }

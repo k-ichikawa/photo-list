@@ -13,8 +13,7 @@ class PhotoContent
         readonly int $photoId,
         private readonly int $hasPhotoFromDb,
         private readonly ?string $imageUrlFromDb,
-        private readonly string $poseFromDb,
-        readonly FullName $memberName
+        private readonly string $poseFromDb
     ) {
         $this->hasPhoto = (bool)$hasPhotoFromDb;
         $this->imageUrl = $imageUrlFromDb ?? '/image/no_image.jpg';

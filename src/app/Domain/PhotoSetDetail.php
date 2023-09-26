@@ -10,6 +10,7 @@ class PhotoSetDetail
      */
     public function __construct(
         readonly FullName $member,
+        readonly string $photoSeriesName,
         readonly array $photoContent
     ) {}
 }

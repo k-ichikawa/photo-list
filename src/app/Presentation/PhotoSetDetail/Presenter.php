@@ -12,6 +12,7 @@ class Presenter
     {
         $viewModel = new ViewModel();
         $viewModel->memberName = $useCaseOutput->photoSetDetail->member->value;
+        $viewModel->photoSeriesName = $useCaseOutput->photoSetDetail->photoSeriesName;
 
         $photoContents = [];
         foreach($useCaseOutput->photoSetDetail->photoContent as $photoContent) {

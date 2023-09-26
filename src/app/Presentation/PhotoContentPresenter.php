@@ -15,7 +15,6 @@ class PhotoContentPresenter
         $viewModel->hasPhoto = $photoContent->hasPhoto;
         $viewModel->imageUrl = $photoContent->imageUrl;
         $viewModel->pose = $photoContent->pose->description();
-        $viewModel->memberName = $photoContent->memberName->value;
 
         return $viewModel;
     }
