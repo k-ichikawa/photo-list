@@ -10,7 +10,9 @@
     "baseUrl": ".",
     "paths": {
         "@/*": ["./resources/*"]
-    }
+    },
+    "types": ["@emotion/react/types/css-prop"],
+    "jsxImportSource": "@emotion/react"
   },
   "exclude": [
     "vendor"

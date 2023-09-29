@@ -1,9 +1,9 @@
 import React from 'react';
 import { PhotoSetType } from '@/js/types/photoList';
 
-export function PhotoSet(props: { photoSet: PhotoSetType }): React.ReactElement {
+export function PhotoSet(props: { photoSet: PhotoSetType, onClick: () => void; }): React.ReactElement {
   return (
-        <a href='#' className='photoSet'>
+        <a href='#' className='photoSet' onClick={props.onClick}>
           <div className='photoSetContent'>
             <img src={ props.photoSet.photoSeriesImageUrl }></img>
             <div>
