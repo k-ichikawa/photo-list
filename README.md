@@ -19,6 +19,8 @@
 - [ ] トレード機能
 - [ ] 管理画面
 
+https://github.com/k-ichikawa/photo-list/assets/10583700/baca2805-7f07-4093-8cd9-d5f969617ae3
+
 # 環境構築手順
 
 ```
